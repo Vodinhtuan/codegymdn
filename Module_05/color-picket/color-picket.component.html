@@ -1,0 +1,5 @@
+<p>color-picket works!</p>
+<select #element (change)="changeHex(element.value)">
+  <option *ngFor="let color of colors" [ngValue]="color">{{color}}</option>
+</select>
+<div style="width: 500px; height: 300px" [style.background-color]="hex"></div>

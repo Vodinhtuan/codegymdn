@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$/.." vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ss03_Angular_Overview/exercises/angular-calculator-app" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ss03_Angular_Overview/practices/angular-show-pet-info" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ss03_Angular_Overview/practices/angular-using-bootstrap" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/ss03_Angular_Overview/practices/font-size" vcs="Git" />
+  </component>
+</project>
