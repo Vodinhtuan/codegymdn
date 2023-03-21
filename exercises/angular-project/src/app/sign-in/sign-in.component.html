@@ -1,0 +1,28 @@
+<form [formGroup]="signInForm">
+  <div class="form-group">
+    <lable for = "email">Email:</lable>
+    <input type="text" id = "email" class="form-control" formControlName="email">
+    <div *ngIf="signInForm.get('email').invalid && (signInForm.get('email').touched || signInForm.get('email').dirty)"
+         class="alert alert-danger">
+        <div *ngIf="signInForm.get('email').errors.required">
+            <span>Email is required</span>
+        </div>
+      <div *ngIf="signInForm.get('email').errors.email">
+        <span>Email is invalid</span>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input type = "password" id = "password" class="form-control" formControlName="password">
+    <div *ngIf="signInForm.get('password').invalid && (signInForm.get('password').touched || signInForm.get('password').dirty)" class="alert alert-danger">
+      <div *ngIf="signInForm.get('password').errors.required">
+        <span>Password is required</span>
+      </div>
+      <div *ngIf="signInForm.get('password').errors.minlength">
+        <span>Length password is greater or equal than 6</span>
+      </div>
+    </div>
+  </div>
+  <button type = "submit" [disabled]="signInForm.valid" class="btn btn-success"></button>
+</form>
