@@ -1,0 +1,7 @@
+<h1>Dictionary Page</h1>
+<h3>List english word</h3>
+<div class="list-group">
+  <ul *ngFor="let word of words">
+    <li><a [routerLink]="['/detail', word.id]" class="list-group-item list-group-item-action active">{{word.english}}</a></li>
+  </ul>
+</div>
