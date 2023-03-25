@@ -1,0 +1,35 @@
+<button type="button" class="btn btn-success mt-2 " routerLink="/customer/create">New Customer</button>
+<h2 style="text-align: center; margin: 20px">List Customer</h2>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col">ID</th>
+    <th scope="col">Name</th>
+    <th scope="col">Birthday</th>
+    <th scope="col">Gender</th>
+    <th scope="col">ID Card</th>
+    <th scope="col">Phone</th>
+    <th scope="col">Email</th>
+    <th scope="col">Customer Type</th>
+    <th scope="col">Address</th>
+    <th scope="col">Edit</th>
+    <th scope="col">Delete</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let customer of customers; index as i">
+    <td scope="row">{{ customer.id }}</td>
+    <td scope="row">{{ customer.name }}</td>
+    <td scope="row">{{ customer.birthday }}</td>
+    <td scope="row">{{ customer.gender }}</td>
+    <td scope="row">{{ customer.idCard }}</td>
+    <td scope="row">{{ customer.phone }}</td>
+    <td scope="row">{{ customer.email }}</td>
+    <td scope="row">{{ customer.customerType.name }}</td>
+    <td scope="row">{{ customer.address }}</td>
+    <td><button [routerLink]="['/customer/edit', customer.id]" class="btn btn-warning">Edit</button>
+    <td><button  class="btn btn-warning">Delete</button>
+  </tr>
+  <!--  (click)="deteleCustomer(customer.id, customer.name)"-->
+  </tbody>
+</table>
