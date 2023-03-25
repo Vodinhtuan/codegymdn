@@ -1,0 +1,127 @@
+<div class="h-100 h-custom" style="background-color: #8fc4b7;">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-lg-8 col-xl-6">
+        <div class="card rounded-3">
+          <img src="https://furama-booking.com/wp-content/uploads/2021/10/Furama-Resort-Villa-Da-Nang10.jpg"
+               class="w-100" style="border-top-left-radius: .3rem; border-top-right-radius: .3rem;"
+               alt="Sample photo">
+          <div class="card-body p-4 p-md-5">
+
+            <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Edit Facility</h3>
+            <form class="px-md-2" [formGroup]="formGroup" novalidate autocomplete="off" (ngSubmit)="save()">
+              <div class="form-outline mb-4">
+                <input type="text" id="name" class="form-control" formControlName="name"
+                       name="name"/>
+                <label class="form-label">
+                  Name
+                  <span style="color:red;"
+                        *ngIf="(formGroup.controls.name.touched) && formGroup.controls.name.hasError('required') "> is Something!!! Input Something </span>
+                </label>
+              </div>
+
+
+              <div class="form-outline mb-4">
+                <input type="number" id="area" class="form-control" formControlName="area" name="area"/>
+                <label class="form-label"> Area
+                  <span style="color:red;"
+                        *ngIf="(formGroup.controls.area.touched) && formGroup.controls.area.hasError('min') "> min 1 </span>
+                </label>
+              </div>
+
+
+              <div class="form-outline mb-4">
+                <input type="number" id="cost" class="form-control" formControlName="cost" name="cost"/>
+                <label class="form-label">
+                  Cost
+                  <span style="color:red;"
+                        *ngIf="(formGroup.controls.cost.touched) && formGroup.controls.cost.hasError('required') "> is Something!!! choose your Id Card </span>
+                </label>
+              </div>
+
+
+              <div class="form-outline mb-4">
+                <input type="text" id="salary" class="form-control" formControlName="standardRoom"
+                       name="standardRoom"/>
+                <label class="form-label">
+                  Standard Room
+                  <span style="color:red;"
+                        *ngIf="(formGroup.controls.standardRoom.touched) && formGroup.controls.standardRoom.hasError('required') "> is Important!!! choose your Salary </span>
+                </label>
+              </div>
+
+
+              <div class="form-outline mb-4">
+                <input type="text" id="maxPeople" class="form-control" formControlName="maxPeople" name="maxPeople"/>
+                <label class="form-label">Max People</label>
+                <span style="color:red;"
+                      *ngIf="(formGroup.controls.maxPeople.touched) && formGroup.controls.maxPeople.hasError('required') "> is something!!! input your phone </span>
+                <span style="color:red;"
+                      *ngIf="(formGroup.controls.maxPeople.touched) && formGroup.controls.maxPeople.hasError('pattern') "> is 0123456789 or +84123456789!!! Input your phone </span>
+              </div>
+
+
+              <div class="form-outline mb-4">
+                <input type="text" id="freeService" class="form-control" formControlName="freeService"
+                       name="freeService"/>
+                <label class="form-label">Free Service</label>
+                <span style="color:red;"
+                      *ngIf="(formGroup.controls.freeService.touched) && formGroup.controls.freeService.hasError('required') "> is something!!! input your email </span>
+              </div>
+
+
+              <div class="form-outline mb-4">
+                <input type="number" id="numberOfFloors" class="form-control" formControlName="numberOfFloors"
+                       name="numberOfFloors"/>
+                <label class="form-label">Number Of Floors</label>
+                <span style="color:red;"
+                      *ngIf="(formGroup.controls.numberOfFloors.touched) && formGroup.controls.numberOfFloors.hasError('required') "> is something!!! input your email </span>
+              </div>
+
+
+              <div class="form-outline mb-4">
+                <input type="number" id="areaPool" class="form-control" formControlName="areaPool" name="areaPool"/>
+                <label class="form-label">Area Pool</label>
+                <span style="color:red;"
+                      *ngIf="(formGroup.controls.areaPool.touched) && formGroup.controls.areaPool.hasError('required') "> is something!!! input your email </span>
+              </div>
+
+
+              <div class="form-outline mb-4">
+                <input type="text" id="descriptionOtherConvenience" class="form-control"
+                       formControlName="descriptionOtherConvenience" name="descriptionOtherConvenience"/>
+                <label class="form-label">Description</label>
+                <span style="color:red;"
+                      *ngIf="(formGroup.controls.descriptionOtherConvenience.touched) && formGroup.controls.descriptionOtherConvenience.hasError('required') "> is something!!! input your email </span>
+              </div>
+
+
+              <div class="form-outline mb-4">
+                <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example"
+                        formControlName="facilityType" name="facilityType">
+                  <option selected [ngValue]="facilitySelected.facilityType">{{facilitySelected.facilityType.name}}</option>
+                  <option *ngFor="let item of facilityTypes" [ngValue]="item">{{item.name}}</option>
+                </select>
+                <label class="form-label">Facility Type</label>
+              </div>
+
+
+              <div class="form-outline mb-4">
+                <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example"
+                        formControlName="rentType" name="rentType">
+                  <option selected [ngValue]="facilitySelected.rentType">{{facilitySelected.rentType.name}}</option>
+                  <option *ngFor="let item of rentTypes" [ngValue]="item">{{item.name}}</option>
+                </select>
+                <label class="form-label">Rent Type</label>
+              </div>
+
+
+              <button type="submit" class="btn btn-primary btn-lg" style="margin-right: 10px" [disabled]="formGroup.invalid" >Submit</button>
+              <button type="button" class="btn btn-warning btn-lg mb-1" routerLink="/facility/list">Back to list</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
