@@ -1,0 +1,78 @@
+<div class="h-100 h-custom" style="background-color: #8fc4b7;">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-lg-8 col-xl-6">
+        <div class="card rounded-3">
+          <img src="https://furama-booking.com/wp-content/uploads/2021/10/Furama-Resort-Villa-Da-Nang10.jpg"
+               class="w-100" style="border-top-left-radius: .3rem; border-top-right-radius: .3rem;"
+               alt="Sample photo">
+          <div class="card-body p-4 p-md-5">
+            <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Create Contract</h3>
+            <form class="px-md-2" [formGroup]="formGroup" novalidate autocomplete="off" (ngSubmit)="save()">
+              <input type="number" name="id" hidden formControlName="id">
+
+
+              <div class="form-outline mb-4">
+                <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example"
+                        formControlName="customer" name="customer">
+                  <option value="" selected>Chose</option>
+                  <option *ngFor="let item of customers" [ngValue]="item">{{item.name}}</option>
+                </select>
+                <label class="form-label">Customer</label>
+              </div>
+
+
+              <div class="form-outline mb-4">
+                <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example"
+                        formControlName="facility" name="facility">
+                  <option value="" selected>Chose</option>
+                  <option *ngFor="let item of facilitys" [ngValue]="item">{{item.name}}</option>
+                </select>
+                <label class="form-label">Facility</label>
+              </div>
+
+
+              <div class="form-outline mb-4">
+                <input type="date" id="dateIn" class="form-control" formControlName="dateIn"
+                       name="dateIn"/>
+                <label class="form-label">
+                  First Date
+                  <span style="color:red;"
+                        *ngIf="(formGroup.controls.dateIn.touched) && formGroup.controls.dateIn.hasError('required') "> is Something!!! Input Something </span>
+                </label>
+              </div>
+
+
+              <div class="form-outline mb-4">
+                <input type="date" id="dateOut" class="form-control" formControlName="dateOut"
+                       name="dateOut"/>
+                <label class="form-label">
+                  Last Date
+                  <span style="color:red;"
+                        *ngIf="(formGroup.controls.dateOut.touched) && formGroup.controls.dateOut.hasError('required') "> is Something!!! Input Something </span>
+                </label>
+              </div>
+
+
+              <div class="form-outline mb-4">
+                <input type="number" id="deposit" class="form-control" formControlName="deposit"
+                       name="deposit"/>
+                <label class="form-label">
+                  Deposit
+                  <span style="color:red;"
+                        *ngIf="(formGroup.controls.deposit.touched) && formGroup.controls.deposit.hasError('required') "> is Something!!! Input Something </span>
+                </label>
+              </div>
+
+
+              <div class="d-flex">
+                <button type="submit" class="btn btn-primary btn-lg" style="margin-right: 10px" [disabled]="formGroup.invalid" >Submit</button>
+                <button type="button" class="btn btn-primary btn-lg" routerLink="/contract/list">Back to list</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
