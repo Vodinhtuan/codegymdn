@@ -1,0 +1,131 @@
+<section class="vh-100" style="background-color: #eee;">
+  <div class="container h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-lg-12 col-xl-11">
+        <div class="card text-black" style="border-radius: 25px;">
+          <div class="card-body p-md-5">
+            <div class="row justify-content-center">
+              <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+
+                <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Create Customer</p>
+
+                <form class="mx-1 mx-md-4" [formGroup]="formGroup" (ngSubmit)="saveCreate()">
+                  <input type="number" name="id" hidden formControlName="id">
+                  <div class="d-flex flex-row align-items-center mb-4">
+
+                    <div class="form-outline flex-fill mb-0">
+                      <input type="text" id="form3Example1c" class="form-control" formControlName="name" name="name"/>
+                      <label class="form-label" for="form3Example1c">Name
+                        <span style="color:red;"
+                              *ngIf="(formGroup.controls.name.touched) && formGroup.controls.name.hasError('required') "> is something!!! input your name </span>
+                        <span style="color:red;"
+                              *ngIf="(formGroup.controls.name.touched) && formGroup.controls.name.hasError('minlength') "> should be longer 5 digits!!! input your name </span>
+                      </label> </div>
+                  </div>
+
+                  <div class="d-flex flex-row align-items-center mb-4">
+
+                    <div class="form-outline flex-fill mb-0">
+                      <input type="date" id="form3Example2c" class="form-control" formControlName="birthday"
+                             name="birthday"/>
+                      <label class="form-label" for="form3Example1c">Birthday
+                        <span style="color:red;"
+                              *ngIf="(formGroup.controls.birthday.touched) && formGroup.controls.birthday.hasError('required') "> is something!!! input your birthday </span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="d-flex flex-row align-items-center mb-4">
+
+                    <div class="form-outline flex-fill mb-0">
+                      <input type="text" id="form3Example9c" class="form-control" formControlName="gender"
+                             name="gender"/>
+                      <label class="form-label" for="form3Example3c">Gender
+                        <span style="color:red;"
+                              *ngIf="(formGroup.controls.gender.touched) && formGroup.controls.gender.hasError('required') "> is something!!! input your gender </span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="d-flex flex-row align-items-center mb-4">
+
+                    <div class="form-outline flex-fill mb-0">
+                      <input type="text" id="form3Example8c" class="form-control" formControlName="idCard"
+                             name="idCard"/>
+                      <label class="form-label" for="form3Example3c">IdCard
+                        <span style="color:red;"
+                              *ngIf="(formGroup.controls.idCard.touched) && formGroup.controls.idCard.hasError('required') "> is something!!! input your idCard </span>
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="d-flex flex-row align-items-center mb-4">
+
+                    <div class="form-outline flex-fill mb-0">
+                      <input type="text" id="form3Example4c" class="form-control" formControlName="phone" name="phone"/>
+                      <label class="form-label" for="form3Example4c">Phone
+                        <span style="color:red;"
+                              *ngIf="(formGroup.controls.phone.touched) && formGroup.controls.phone.hasError('required') "> is something!!! input your phone </span>
+                        <span style="color:red;"
+                              *ngIf="(formGroup.controls.phone.touched) && formGroup.controls.phone.hasError('pattern') "> error pattern </span>
+
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="d-flex flex-row align-items-center mb-4">
+
+                    <div class="form-outline flex-fill mb-0">
+                      <input type="email" id="form3Example3c" class="form-control" formControlName="email"
+                             name="email"/>
+                      <label class="form-label" for="form3Example3c">Email
+                        <span style="color:red;"
+                              *ngIf="(formGroup.controls.email.touched) && formGroup.controls.email.hasError('required') "> is something!!! input your email </span>
+                        <span style="color:red;"
+                              *ngIf="(formGroup.controls.email.touched) && formGroup.controls.email.hasError('pattern') "> error pattern </span>
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="d-flex flex-row align-items-center mb-4">
+
+                    <div class="form-outline flex-fill mb-0">
+                      <input type="text" id="form3Example6c" class="form-control" formControlName="address"
+                             name="address"/>
+                      <label class="form-label" for="form3Example3c">Address</label>
+                    </div>
+                  </div>
+
+
+
+                  <div class="d-flex flex-row align-items-center mb-4">
+
+                    <div class="form-outline flex-fill mb-0">
+                      <label class="form-label" for="form3Example1c">CustomerType</label>
+                      <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example"
+                              formControlName="customerType" name="customerType">
+                        <option value="" selected>Chose</option>
+                        <option *ngFor="let c of  customerTypes" [ngValue]="c">{{c.name}}</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="d-flex">
+                    <button type="submit" class="btn btn-primary btn-lg" style="margin-right: 10px" [disabled]="formGroup.invalid" >Submit</button>
+                    <button type="button" class="btn btn-primary btn-lg" routerLink="/customer/list">Back to list</button>
+                  </div>
+
+
+                </form>
+
+              </div>
+              <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+
+                <img src="data:image/png;base64,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"
+                     class="img-fluid" alt="Sample image">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
