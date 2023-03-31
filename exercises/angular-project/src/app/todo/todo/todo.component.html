@@ -1,0 +1,48 @@
+<h2 class="text-center">
+  Todo App
+</h2>
+<div class="col-md-8 offset-md-2">
+  <input type="text" class="form-control" [formControl]="content" (change)="change()">
+  <ul>
+    <li *ngFor="let todo of todos; index as i">
+      <b (click)="toggleTodo(i)"
+         [class.complete]="todo.complete">Id: {{todo.id}}<br>
+        {{todo.content}}</b><br>
+      <button class="btn btn-sm btn-outline-success" (click)="check(todo.id)" data-bs-toggle="modal" data-bs-target="#exampleModal" >edit</button>
+      <button class="btn btn-sm btn-outline-danger" (click)="delete(todo.id)">delete</button>
+    </li>
+  </ul>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <form [formGroup]="edit" (ngSubmit)="up(edit)">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Edit</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <table>
+            <tr>
+              <th>id</th>
+              <td><input formControlName="id" class="input" [attr.disabled]="true"></td>
+            </tr>
+            <tr>
+              <th>content</th>
+              <td><input formControlName="content" class="input"></td>
+            </tr>
+            <tr>
+              <th>complete</th>
+              <td><input formControlName="complete" class="input"></td>
+            </tr>
+          </table>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" type="submit">Save changes</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
