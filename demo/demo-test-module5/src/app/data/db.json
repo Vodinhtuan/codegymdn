@@ -1,0 +1,139 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "T-shirt",
+      "origin": "korea",
+      "price": 29.9,
+      "unit": "USD"
+    },
+    {
+      "id": 2,
+      "name": "Sweater",
+      "origin": "France",
+      "price": 53.3,
+      "unit": "EUR"
+    },
+    {
+      "id": 3,
+      "name": "Hoodie",
+      "origin": "Viet Nam",
+      "price": 46.2,
+      "unit": "CAD"
+    },
+    {
+      "id": 4,
+      "name": "Turtleneck",
+      "origin": "Canada",
+      "price": 27.8,
+      "unit": "AUD"
+    },
+    {
+      "id": 5,
+      "name": "Leather Jacket",
+      "origin": "China",
+      "price": 13.3,
+      "unit": "yuan"
+    }
+  ],
+  "consignments": [
+    {
+      "id": 1,
+      "quantity": 9,
+      "importDate": "2022-12-11",
+      "exportDate": "2023-02-23",
+      "tax": "10%",
+      "product": {
+        "id": 1,
+        "name": "T-shirt",
+        "origin": "korea",
+        "price": 29.9,
+        "unit": "USD"
+      }
+    },
+    {
+      "id": 2,
+      "quantity": 1,
+      "importDate": "2022-06-21",
+      "exportDate": "2022-08-13",
+      "tax": "20%",
+      "product": {
+        "id": 2,
+        "name": "Sweater",
+        "origin": "France",
+        "price": 53.3,
+        "unit": "EUR"
+      }
+    },
+    {
+      "id": 3,
+      "quantity": 3,
+      "importDate": "2023-11-16",
+      "exportDate": "2022-11-21",
+      "tax": "8%",
+      "product": {
+        "id": 3,
+        "name": "Hoodie",
+        "origin": "Viet Nam",
+        "price": 46.2,
+        "unit": "CAD"
+      }
+    },
+    {
+      "id": 4,
+      "quantity": 5,
+      "importDate": "2023-05-13",
+      "exportDate": "2022-05-17",
+      "tax": "2%",
+      "product": {
+        "id": 4,
+        "name": "Turtleneck",
+        "origin": "Canada",
+        "price": 27.8,
+        "unit": "AUD"
+      }
+    },
+    {
+      "id": 5,
+      "quantity": 7,
+      "importDate": "2023-01-01",
+      "exportDate": "2022-02-21",
+      "tax": "3%",
+      "product": {
+        "id": 5,
+        "name": "Leather Jacket",
+        "origin": "China",
+        "price": 13.3,
+        "unit": "yuan"
+      }
+    },
+    {
+      "id": 6,
+      "product": {
+        "id": 3,
+        "name": "Hoodie",
+        "origin": "Viet Nam",
+        "price": 46.2,
+        "unit": "CAD"
+      },
+      "quantity": 12,
+      "importDate": "2023-04-02",
+      "exportDate": "2023-04-03",
+      "tax": "20%"
+    },
+    {
+      "id": 7,
+      "product": {
+        "id": 5,
+        "name": "Leather Jacket",
+        "origin": "China",
+        "price": 13.3,
+        "unit": "yuan"
+      },
+      "quantity": 8,
+      "importDate": "2023-04-04",
+      "exportDate": "2023-04-05",
+      "tax": "16%"
+    }
+  ]
+}
