@@ -1,0 +1,61 @@
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import '~font-awesome/css/font-awesome.min.css';
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+.example-card {
+  max-width: 800px;
+  display: block;
+  margin: 30px auto;
+}
+
+button {
+  padding: 5px;
+}
+
+button:focus {
+  outline: none !important;
+  border-radius: 4px;
+}
+
+
+.mat-card-header {
+  align-items: center;
+
+}
+mat-card-subtitle {
+  margin-left: 2px;
+}
+
+.mat-card-header .mat-card-title {
+  margin-bottom: 4px;
+}
+
+.mat-card-header .mat-card-subtitle {
+  margin-bottom: 0;
+}
+
+
+.example-header-image {
+  background-image: url('https://haycafe.vn/wp-content/uploads/2022/12/hinh-anh-avatar-nhom-con-meo-nam-ngua-tren-ghe-600x600.jpg');
+  background-size: cover;
+}
+
+.mat-card-avatar {
+  width: 45px;
+  height: 45px;
+}
+
+
+.heading {
+  text-align: center;
+  padding: 2.5rem 0;
+}
+
+.heading span {
+  font-size: 3.5rem;
+  background-color: rgba(255, 165, 0, .2);
+  color: var(--primaryColor);
+  border-radius: 5px;
+  padding: 2px 10px;
+  margin: 0 2px;
+}

@@ -34,6 +34,13 @@ export class ConsignmentService {
   }
 
   findByProductName(productName: string): Observable<consignment[]> {
-    return this.httpClient.get<consignment[]>(`${this.url}?product.name_like=${productName}`)
+    return this.httpClient.get<consignment[]>(`${this.url}?product.name_like=${productName}`);
   }
+
+  findByExportDate(exportDate: Date): Observable<consignment[]> {
+    const formattedDate = exportDate.toISOString().slice(0, 10); // Chuyển đổi ngày thành chuỗi theo định dạng yyyy-MM-dd
+    return this.httpClient.get<consignment[]>(`${this.url}?exportDate=${formattedDate}`);
+  }
+
+
 }

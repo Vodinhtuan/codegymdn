@@ -1,1 +1,90 @@
-<p>detail works!</p>
+
+<section class="container">
+  <h1 class="heading">
+    <span>d</span>
+    <span>e</span>
+    <span>t</span>
+    <span>a</span>
+    <span>i</span>
+    <span>l</span>
+    <span>s</span>
+  </h1>
+  <mat-card class="example-card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>{{ consignment?.product?.name }}</mat-card-title>
+      <mat-card-subtitle>he he ^</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+      <mat-list>
+        <!-- <mat-list-item>
+          <div matLine>
+            Gender:
+            <button *ngIf="customer.gender === 0" mat-button>Male</button>
+            <button *ngIf="customer.gender === 1" mat-button>Female</button>
+            <button *ngIf="customer.gender === 2" mat-button>Others</button>
+          </div>
+        </mat-list-item> -->
+
+        <mat-list-item>
+          <div matLine>
+            Consignment Id:
+            <button mat-button>{{ consignment?.consignmentId }}</button>
+          </div>
+        </mat-list-item>
+
+        <mat-list-item>
+          <div matLine>
+            Quantity:
+            <button mat-button>{{ consignment?.quantity }}</button>
+          </div>
+        </mat-list-item>
+
+        <mat-list-item>
+          <div matLine>
+            Tax:
+            <button mat-button>{{ consignment?.tax }}</button>
+          </div>
+        </mat-list-item>
+
+        <mat-list-item>
+          <div matLine>
+            Import Date:
+            <button mat-button>{{ consignment?.importDate | date }}</button>
+          </div>
+        </mat-list-item>
+
+        <mat-list-item>
+          <div matLine>
+            Export Date:
+            <button mat-button>{{ consignment?.exportDate | date }}</button>
+          </div>
+        </mat-list-item>
+
+        <!-- <mat-list-item>
+          <div>
+            Goals:
+            <button mat-button>
+              <mat-chip-list>
+                <ng-container>
+                  <mat-chip selected>{{ customer.customerType.name }}</mat-chip>
+                </ng-container>
+              </mat-chip-list>
+            </button>
+          </div>
+        </mat-list-item> -->
+      </mat-list>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button color="accent">LIKE</button>
+      <button mat-button color="primary">SHARE</button>
+      <button routerLink="/list" mat-button color="warn">
+        return
+      </button>
+    </mat-card-actions>
+    <mat-card-footer>
+      <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+    </mat-card-footer>
+  </mat-card>
+</section>

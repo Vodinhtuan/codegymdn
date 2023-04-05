@@ -1,0 +1,64 @@
+:root {
+  --primaryColor: hsl(199, 100%, 33%);
+  --secondaryColor: hsl(187, 85%, 43%);
+  --whiteColor: hsl(0, 0%, 100%);
+  --blackColor: hsl(201, 33%, 16%);
+  --textColor: hsl(240, 4%, 36%);
+  --inputColor: rgb(239, 239, 239);
+  --greyText: rgb(190, 190, 190);
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: hsl(187, 85%, 43%);
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+.example-radio-group {
+  display: flex;
+  flex-direction: column;
+  margin: 5px 0;
+  align-items: flex-start;
+}
+
+.example-radio-button {
+  margin: 7px;
+}
+
+// .example-form-field {
+//     margin-right: 20px;
+// }
+.select-option-label {
+  margin: 10px 0;
+}
+
+.button-space {
+  display: flex;
+  gap: 8px;
+}
+
+button {
+  display: inline-block;
+  padding: .3rem .8rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.5s;
+  text-align: center;
+  font-size: 14px;
+  word-wrap: break-word;
+}
+
+button:hover:first-child {
+  background-color: hsl(199, 100%, 33%);
+}
+
+button:hover:last-child {
+  background-color: #343a40;
+}
+
+.cancel {
+  color: darkgrey !important;
+}

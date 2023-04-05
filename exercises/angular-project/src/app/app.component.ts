@@ -1,5 +1,7 @@
+// @ts-ignore
 import { Component } from '@angular/core';
 export type FormTyoe = 'sign-in'| 'sign-up';
+// @ts-ignore
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
